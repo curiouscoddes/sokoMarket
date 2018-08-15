@@ -1,0 +1,7 @@
+{
+  "name": "sokoMarket",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
