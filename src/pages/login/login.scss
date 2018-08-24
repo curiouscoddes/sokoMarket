@@ -16,7 +16,7 @@ ion-card.card{
 }
 a, p,
 ion-card-header.card-header {
-color: #fff;
+color: #fff!important;
 }
 .list > .item-block:first-child{
     border: medium none;
@@ -25,6 +25,7 @@ color: #fff;
     margin-bottom: 10px;
     background: rgba(255, 255, 255, 0.5);
     border: medium none;
+    border-radius: 5px;
 }
 .text-input,{
     color:#fff;
@@ -44,5 +45,12 @@ input::-moz-placeholder{
 }
 *::-webkit-input-placeholder{
     color: #fff!important;
+}
+.icon {
+    padding-right: 10px;
+}
+.bottom {
+    position: absolute;
+    bottom: 0;
 }
 }
