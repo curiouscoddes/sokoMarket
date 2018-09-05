@@ -6,13 +6,34 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>signup</ion-title>
-  </ion-navbar>
+  
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="background">
+  <ion-card>
+    <ion-card-header>
+      Signup
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="email" [(ngModel)]="newuser.email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="newuser.password"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>Username</ion-label>
+              <ion-input type="text" [(ngModel)]="newuser.username"></ion-input>
+            </ion-item>
+            <button ion-button round outline color ="light"(click)="signup()">Sign up</button>
+            <button ion-button full clear outline color="light" (click)="goback()">Go Back</button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

@@ -31,4 +31,7 @@ export class LoginPage {
        alert(res);
      })
    }
+   signup(){
+     this.navCtrl.push('SignupPage');
+   }
 }
