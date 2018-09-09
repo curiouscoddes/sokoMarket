@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController,ToastController } from 'ionic-angular';
 import { UserProvider} from '../../providers/user/user';
 
+
 /**
  * Generated class for the SignupPage page.
  *
@@ -53,7 +54,7 @@ export class SignupPage {
     })
   }
 }
-  goback(){
+  goBack(){
     this.navCtrl.setRoot('LoginPage');
   }
 

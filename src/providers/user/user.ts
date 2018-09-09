@@ -2,7 +2,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth} from 'angularfire2/auth';
 import firebase from 'firebase';
-import { resolve } from 'path';
 /*
   Generated class for the UserProvider provider.
 
@@ -20,12 +19,12 @@ adduser(newuser){
     this.afireauth.auth.createUserWithEmailAndPassword(newuser.email, newuser.password).then(()=>{
       this.afireauth.auth.currentUser.updateProfile({
         displayName: newuser.username,
-        photoURL: ''
+        photoURL: 'https://firebasestorage.googleapis.com/v0/b/myapp-4eadd.appspot.com/o/chatterplace.png?alt=media&token=e51fa887-bfc6-48ff-87c6-e2c61976534e'
       }).then(()=>{
         this.firedata.child(this.afireauth.auth.currentUser.uid).set({
           uid: this.afireauth.auth.currentUser.uid,
           displayName: newuser.username,
-          photoURL: '/users_profpic'
+          photoURL: 'https://firebasestorage.googleapis.com/v0/b/myapp-4eadd.appspot.com/o/chatterplace.png?alt=media&token=e51fa887-bfc6-48ff-87c6-e2c61976534e'
         }).then(()=>{
           resolve({success: true});
         }).catch((err)=>{
@@ -38,6 +37,37 @@ adduser(newuser){
         reject(err);
       })
     })
+return promise;
+}
+passwordReset(email){
+var promise = new Promise((resolve, reject)=>{
+  firebase.auth().sendPasswordResetEmail(email).then(()=>{
+    resolve({success: true});
+  }).catch((err)=>{
+    reject(err);
+  })
+})
+return promise;
+}
+updateImage(imageurl){
+var promise = new Promise((resolve, reject)=>{
+  this.afireauth.auth.currentUser.updateProfile({
+    displayName: this.afireauth.auth.currentUser.displayName,
+    photoURL: imageurl
+}).then(()=>{
+  firebase.database().ref('chatusers' + firebase.auth().currentUser.uid).update({
+    displayName: this.afireauth.auth.currentUser.displayName,
+    photoURL: imageurl,
+    uid: firebase.auth().currentUser.uid
+  }).then(()=>{
+    resolve({success: true});
+  }).catch((err)=>{
+    reject(err);
+  })
+}).catch((err)=>{
+  reject(err);
+})
+})
 return promise;
 }
 }

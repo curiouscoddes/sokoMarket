@@ -4,6 +4,9 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
+import { File} from '@ionic-native/file';
+import { FileChooser} from '@ionic-native/file-chooser';
+import { FilePath} from '@ionic-native/file-path';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 
@@ -12,6 +15,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
 import { AuthProvider} from '../providers/auth/auth';
 import { UserProvider } from '../providers/user/user';
+import { ImghandlerProvider } from '../providers/imghandler/imghandler';
 
 
 
@@ -33,10 +37,14 @@ import { UserProvider } from '../providers/user/user';
   providers: [
     StatusBar,
     SplashScreen,
+    File,
+    FilePath,
+    FileChooser,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     AngularFireAuth,
-    UserProvider
+    UserProvider,
+    ImghandlerProvider
   ]
 })
 export class AppModule {}

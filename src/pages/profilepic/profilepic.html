@@ -6,13 +6,24 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>profilepic</ion-title>
+  <ion-navbar color="h1color">
+    <ion-title > Profile picture</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content >
+<div class="profile-image">
+  <img src="{{imageurl}}">
+</div>
+<div>
+  <button ion-button round outine (click)= "chooseImage()">Choose an Image</button>
+</div>
+<div [hidden]="!moveon">
+    <button ion-button round outine (click)= "proceed()">Skip this step</button>
+  </div>
+  <div [hidden]="moveon">
+      <button ion-button round outine (click)= "updateProceed()">upload and proceed</button>
+    </div>
 </ion-content>

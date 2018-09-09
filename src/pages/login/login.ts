@@ -17,7 +17,8 @@ import { AuthProvider } from '../../providers/auth/auth';
 })
 export class LoginPage {
   credentials = {} as usercreds;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public authservice: AuthProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+              public authservice: AuthProvider) {
   }
 
   ionViewDidLoad() {
@@ -33,5 +34,8 @@ export class LoginPage {
    }
    signup(){
      this.navCtrl.push('SignupPage');
+   }
+   passwordReset(){
+     this.navCtrl.push('PasswordresetPage');
    }
 }
