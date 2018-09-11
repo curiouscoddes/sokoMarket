@@ -7,12 +7,23 @@
 <ion-header >
 
   <ion-navbar color="h1color">
-    <ion-title>User</ion-title>
+    <ion-title>Profile</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="profile-image">
+<div class="profile-page" (click)="editImage()">
+  <img src="{{avatar}}">
+</div>
+<div>
+  <h2 (click)="editName()">{{displayName}}</h2>
+</div>
+<div>Tap on your pic or Nick name to change it</div>
+<div class="spacer" style="height: 10px"></div>
+<div>
+  <button ion-button clear outline color="danger" (click)="logout()" >Logout</button>
 
+</div>
 </ion-content>

@@ -32,10 +32,10 @@ if (res.success){
   alert.setTitle('Email sent');
   alert.setSubTitle('Please follow the instructions in the email to reset your password');
 }
-else{
+}).catch((err)=>{
   alert.setTitle('Failed');
-}
-});
+  alert.setSubTitle(err);
+})
 }
 goBack(){
   this.navCtrl.setRoot('LoginPage');
