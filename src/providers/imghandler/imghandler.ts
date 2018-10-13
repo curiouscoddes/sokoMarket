@@ -1,8 +1,8 @@
 
 import { Injectable } from '@angular/core';
-//import { File} from '@ionic-native/file';
+import { File} from '@ionic-native/file';
 import { FileChooser} from '@ionic-native/file-chooser';
-//import { FilePath} from '@ionic-native/file-path';
+import { FilePath} from '@ionic-native/file-path';
 import firebase from 'firebase';
 /*
   Generated class for the ImghandlerProvider provider.
@@ -31,7 +31,7 @@ firestore = firebase.storage();
           var reader = new FileReader();
           reader.readAsArrayBuffer(resFile);
           reader.onloadend = (evt: any) => {
-            var imgBlob = new Blob([evt.target.result], { type: 'image/jpeg' });
+            var imgBlob = new Blob([evt.target.result], { type: 'image/jpg' });
             var imageStore = this.firestore.ref('/users_profpic').child(firebase.auth().currentUser.uid);
             imageStore.put(imgBlob).then((res) => {
              this.firestore.ref('/users_profpic').child(firebase.auth().currentUser.uid).getDownloadURL().then((url)=>{

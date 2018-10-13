@@ -8,7 +8,7 @@ import { File} from '@ionic-native/file';
 import { FileChooser} from '@ionic-native/file-chooser';
 import { FilePath} from '@ionic-native/file-path';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { LoginPage } from '../pages/login/login';
+//import { LoginPage } from '../pages/login/login';
 
 import { config } from './app.firebaseconfig';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -22,7 +22,7 @@ import { ImghandlerProvider } from '../providers/imghandler/imghandler';
 @NgModule({
   declarations: [
     MyApp,
-    LoginPage
+   // LoginPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +32,7 @@ import { ImghandlerProvider } from '../providers/imghandler/imghandler';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    LoginPage
+    //LoginPage
   ],
   providers: [
     StatusBar,

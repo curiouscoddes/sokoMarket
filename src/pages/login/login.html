@@ -18,11 +18,11 @@
       <ion-list no-line>
         <ion-item>
           <ion-label floating>Email</ion-label>
-          <ion-input type="email" [(ngModel)]="credentials.email"></ion-input>
+          <ion-input type="email" [(ngModel)]="email"></ion-input>
         </ion-item>
         <ion-item>
            <ion-label floating>Password</ion-label>
-          <ion-input type="password" [(ngModel)]="credentials.password"></ion-input>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
         </ion-item>
        <a (click)="passwordReset()">Forgot password? <b>Get help here</b></a>
         <button ion-button block outline round color="light" (click)="signin()">Login</button>
